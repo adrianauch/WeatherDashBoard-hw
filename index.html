@@ -10,6 +10,7 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="./style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -23,64 +24,54 @@
       </nav>
     </header>
     <main>
-      <!-- search bar -->
-      <div class="row">
-        <div class="col-sm bg-light">
-          <h4>Search for a city:</h4>
-          <div class="city-input">
-            <input type="text" id="city-search" />
-            <div class="append-input"><button id="seach-btn"></button></div>
-          </div>
-        </div>
-        <!-- Search History -->
-        <ul class="list-grp"></ul>
-      </div>
+         <!-- Big container-->
+         <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card-body text-center">
+                        <!-- Search text-->
 
-      <!-- Today's forecast -->
-      <div class="col-sm-8">
-        <div class="col-sm-12" id="current-weather">
-          <h3 class="city-name" id=" current-city"></h3>
-          <p>Date: <span class="current" id="date"></span></p>
-          <p>Temperature: <span class="current" id="temp"></span></p>
-          <p>Humdity: <span class="current" id="Humdity"></span></p>
-          <p>Wind: <span class="current" id="wind"></span></p>
-          <p>UV Index: <span class="current" id="uv-index"></span></p>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body bg-light">
+                                <h6 class="card-subtitle mb-2 text-muted">Search For A City</h6>
+                                <div class="input-group mb-3">
+                                    <input type="text"  id="user-input" class="form-control UserInput" placeholder="Enter City Name">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary bg-primary searchBtn" type="button"
+                                            id="btn"><i class="searchBtn"></i> Search</button>
+                                    </div>
+                                </div>
+
+                                <ul class="list-grp">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Appends current weather forecast-->
+                <div class="col mt-4 mr-5">
+                    <div class="card currentWeather pb-2 pt-1">
+                        <h5 class="card-title mt-2 text-center">Current Forecast</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-4">
+                        <div class="card pb-5 fiveDayWeather pl-5">
+                            <!-- Appends 5 day forecast-->
+                            <h5 class="card-title mt-2 mr-5">5-Day Forecast </h5>
+                            <div class="row">
+                                <div class="col fiveDayW">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- 5 day forecast -->
-      <div class="col-sm-12" id="week-ahead">
-        <h3>5 Day Forecast</h3>
-        <div class="col-sm-2">
-          <p id="wDate0"></p>
-          <p id="wicon0"></p>
-          <p>Temperature: <span id="wTemp0"></span></p>
-          <p>Humdity: <span id="whumidity0"></span></p>
-        </div>
-        <div class="col-sm-2">
-          <p id="wDate1"></p>
-          <p id="wicon1"></p>
-          <p>Temperature: <span id="wTemp1"></span></p>
-          <p>Humdity: <span id="whumidity1"></span></p>
-        </div>
-        <div class="col-sm-2">
-          <p id="wDate2"></p>
-          <p id="wicon2"></p>
-          <p>Temperature: <span id="wTemp2"></span></p>
-          <p>Humdity: <span id="whumidity2"></span></p>
-        </div>
-        <div class="col-sm-2">
-          <p id="wDate3"></p>
-          <p id="wicon3"></p>
-          <p>Temperature: <span id="wTemp3"></span></p>
-          <p>Humdity: <span id="whumidity3"></span></p>
-        </div>
-        <div class="col-sm-2">
-          <p id="wDate4"></p>
-          <p id="wicon4"></p>
-          <p>Temperature: <span id="wTemp4"></span></p>
-          <p>Humdity: <span id="whumidity4"></span></p>
-        </div>
-      </div>
+    </div>
     </main>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
