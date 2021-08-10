@@ -15,6 +15,7 @@
   </head>
   <body>
     <header>
+      <!-- navbar with weather title -->
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
@@ -23,36 +24,62 @@
     </header>
     <main>
       <!-- search bar -->
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default"
-            >Default</span
-          >
+      <div class="row">
+        <div class="col-sm bg-light">
+          <h4>Search for a city:</h4>
+          <div class="city-input">
+            <input type="text" id="city-search" />
+            <div class="append-input"><button id="seach-btn"></button></div>
+          </div>
         </div>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Default"
-          aria-describedby="inputGroup-sizing-default"
-        />
-      </div>
-      <!-- Today's forecast -->
-      <div class="row main weather-container">
-        <div>city</div>
-        <div>date</div>
-        <div>temp</div>
-        <div>wind</div>
-        <div>humidity</div>
-        <div>uv index</div>
+        <!-- Search History -->
+        <ul class="list-grp"></ul>
       </div>
 
+      <!-- Today's forecast -->
+      <div class="col-sm-8">
+        <div class="col-sm-12" id="current-weather">
+          <h3 class="city-name" id=" current-city"></h3>
+          <p>Date: <span class="current" id="date"></span></p>
+          <p>Temperature: <span class="current" id="temp"></span></p>
+          <p>Humdity: <span class="current" id="Humdity"></span></p>
+          <p>Wind: <span class="current" id="wind"></span></p>
+          <p>UV Index: <span class="current" id="uv-index"></span></p>
+        </div>
+      </div>
       <!-- 5 day forecast -->
-      <div>
-        <div>day 1</div>
-        <div>day 2</div>
-        <div>day 3</div>
-        <div>day 4</div>
-        <div>day 5</div>
+      <div class="col-sm-12" id="week-ahead">
+        <h3>5 Day Forecast</h3>
+        <div class="col-sm-2">
+          <p id="wDate0"></p>
+          <p id="wicon0"></p>
+          <p>Temperature: <span id="wTemp0"></span></p>
+          <p>Humdity: <span id="whumidity0"></span></p>
+        </div>
+        <div class="col-sm-2">
+          <p id="wDate1"></p>
+          <p id="wicon1"></p>
+          <p>Temperature: <span id="wTemp1"></span></p>
+          <p>Humdity: <span id="whumidity1"></span></p>
+        </div>
+        <div class="col-sm-2">
+          <p id="wDate2"></p>
+          <p id="wicon2"></p>
+          <p>Temperature: <span id="wTemp2"></span></p>
+          <p>Humdity: <span id="whumidity2"></span></p>
+        </div>
+        <div class="col-sm-2">
+          <p id="wDate3"></p>
+          <p id="wicon3"></p>
+          <p>Temperature: <span id="wTemp3"></span></p>
+          <p>Humdity: <span id="whumidity3"></span></p>
+        </div>
+        <div class="col-sm-2">
+          <p id="wDate4"></p>
+          <p id="wicon4"></p>
+          <p>Temperature: <span id="wTemp4"></span></p>
+          <p>Humdity: <span id="whumidity4"></span></p>
+        </div>
       </div>
     </main>
     <script
