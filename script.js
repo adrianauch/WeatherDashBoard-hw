@@ -68,6 +68,7 @@ function weather() {
         "<p>" + "Wind: " + response.main.humidity + " mph" + "</p>"
       );
       //Adding in UV index - Different API Pull
+      //can't get this to work
     });
     //Pull Data for 5-Day forecast
     $.ajax({
@@ -75,6 +76,36 @@ function weather() {
       method: "GET",
     }).then(function (response) {
       console.log(response);
+      //these are the different days
+      var date = [0, 8, 16, 24, 32];
+      //adding to HTML
+      var fiveDayWeather = $(".fiveDayCard").addClass("card-body");
+      var fiveDayDiv = $(".fiveDayOne").addClass("card-text");
+      fiveDayDiv.empty();
+      // For each day (next 5 days)
+      date.forEach(function (i) {
+        //converting time
+        var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000);
+        FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
+        //appending to the DOM/HTML
+        fiveDayDiv.append(
+          "<div class=fiveDayColor>" +
+            "<p>" +
+            FiveDayTimeUTC1 +
+            "</p>" +
+            `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` +
+            "<p>" +
+            "Temperature: " +
+            response.list[i].main.temp +
+            "</p>" +
+            "<p>" +
+            "Humidity: " +
+            response.list[i].main.humidity +
+            "%" +
+            "</p>" +
+            "</div>"
+        );
+      });
     });
   }
 }
