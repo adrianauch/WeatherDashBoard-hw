@@ -1,0 +1,22 @@
+/* Style Sheet - Used bootstrap but adding extra Style here */
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+li {
+  text-align: center;
+  padding-left: 10px;
+  border-bottom: 1px solid darkgray;
+}
+.fiveDayColor {
+  background-color: lightblue;
+  color: darkblue;
+  float: left;
+  margin: 10px;
+  border: 2px solid darkblue;
+}

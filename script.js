@@ -109,3 +109,9 @@ function weather() {
     });
   }
 }
+//Local Storage
+for (var i = 0; i < localStorage.length; i++) {
+  var city = localStorage.getItem(i);
+  var cityName = $(".list-grp").addClass(".list-group-item");
+  cityName.append("<li>" + city + "</li>");
+}
