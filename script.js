@@ -49,7 +49,13 @@ function weather() {
       var CurrentName = currentCity.append("<p>");
       currentCity.append(CurrentName);
       //Add Time:
-
+      var timeUTC = new Date(response.dt * 1000);
+      CurrentName.append(
+        response.name + " " + timeUTC.toLocaleDateString("en-US")
+      );
+      CurrentName.append(
+        `<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`
+      );
       //ADD TEMP
       var currentTemp = CurrentName.append("<p>");
       CurrentName.append(currentTemp);
@@ -62,6 +68,13 @@ function weather() {
         "<p>" + "Wind: " + response.main.humidity + " mph" + "</p>"
       );
       //Adding in UV index - Different API Pull
+    });
+    //Pull Data for 5-Day forecast
+    $.ajax({
+      url: urlFiveDay,
+      method: "GET",
+    }).then(function (response) {
+      console.log(response);
     });
   }
 }
