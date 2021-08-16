@@ -15,7 +15,7 @@ function weather() {
   // API Variables
   //Curent Weather Var
   var urlCurrent =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     UserInput +
     "&Appid=ca36ef21da1b73a0964a3f552def14cd&units=imperial";
   //five day forecast var
