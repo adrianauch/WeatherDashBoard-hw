@@ -4,25 +4,28 @@ var entries = 0;
 
 //API KEY
 var APIkey = "ca36ef21da1b73a0964a3f552def14cd";
-
+//Event listener
 Searchbtn.on("click", weather);
 
 function weather() {
   //recording User Input
   var UserInput = $(".UserInput").val();
   console.log(UserInput);
-  var APIkey = "ca36ef21da1b73a0964a3f552def14cd";
   // API Variables
   //Curent Weather Var
   var urlCurrent =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     UserInput +
-    "&Appid=ca36ef21da1b73a0964a3f552def14cd&units=imperial";
+    "&Appid=" +
+    APIkey +
+    "&units=imperial";
   //five day forecast var
   var urlFiveDay =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     UserInput +
-    "&Appid=ca36ef21da1b73a0964a3f552def14cd&units=imperial";
+    "&Appid=" +
+    APIkey +
+    "&units=imperial";
 
   if (UserInput == "") {
     console.log(UserInput);
